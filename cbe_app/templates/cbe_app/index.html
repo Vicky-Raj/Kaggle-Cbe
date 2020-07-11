@@ -2,161 +2,207 @@
 
 <!-- Hero Start -->
 <div
-    class="hero"
-    style="background-image: url(../static/cbe_app/images/hero.jpeg);"
+  class="hero"
+  style="background-image: url(../static/cbe_app/images/hero.jpeg);"
 >
-    <div class="hero-container">
-        <div class="hero-text">
-            Be part of the <br />
-            Coimbatore’s biggest <br />
-            Data Science community
-        </div>
-        <div class="btn-container">
-            <button class="btn">Join us</button>
-        </div>
+  <div class="hero-container">
+    <div class="hero-text">
+      Be part of the <br />
+      Coimbatore’s biggest <br />
+      Data Science community
     </div>
+    <div class="btn-container">
+      <button class="btn">Join us</button>
+    </div>
+  </div>
 </div>
 <!-- End Hero -->
 
 <!-- Mission Start -->
 <main>
-    <div class="card" id="mission">
-        <h1 class="subtitle">OUR MISSION</h1>
-        <div class="event">
-            <i class="material-icons event-icon">event_note</i>
+  <div class="card" id="mission">
+    <h1 class="subtitle">OUR MISSION</h1>
+    <div class="event">
+      <i class="material-icons event-icon">event_note</i>
+    </div>
+    <div class="mission-text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
+      accusantium voluptates esse eveniet, deserunt delectus magnam est a
+      reiciendis! Optio fugit praesentium alias ipsum impedit blanditiis
+      veritatis eum sed autem, expedita, consectetur nemo? Eligendi cum magni
+      soluta eum numquam. Dolore minus ullam, consequuntur suscipit deserunt,
+      neque nisi repellendus porro perspiciatis omnis libero ipsum tempora odit.
+      Nihil animi voluptate alias nam consequatur tempora consequuntur omnis.
+      Magni fuga molestias beatae cupiditate explicabo amet neque voluptatibus
+      voluptatum est reprehenderit, maxime nihil. Sit voluptatum in nihil
+      asperiores expedita doloribus minus voluptas quod explicabo corporis modi
+      reiciendis nulla, praesentium soluta quidem quisquam id sunt corrupti
+      architecto amet natus blanditiis rerum recusandae necessitatibus!
+      Laudantium expedita veritatis nesciunt autem recusandae? Veritatis, porro
+      corrupti aut, accusamus similique quidem temporibus asperiores praesentium
+      excepturi aliquid fugit corporis assumenda laborum? Cumque, esse
+      doloremque distinctio beatae quas error, aperiam facere unde voluptates ex
+      voluptatibus itaque id fugiat, consequatur nisi explicabo ut a amet
+      molestiae quod dolorum! Molestiae quisquam quas vitae ea quae, aperiam,
+      odio saepe et quibusdam voluptate dolorem fugit dignissimos! Harum rem
+      voluptas voluptatum incidunt exercitationem dolorem velit ea, temporibus
+      non nobis sunt, fugit omnis voluptates dolorum eum error eaque repellat
+      molestias ut. Suscipit commodi reprehenderit laboriosam iusto sint
+      blanditiis aliquid!
+    </div>
+  </div>
+
+  <!-- End Mission  -->
+  <!-- Team Start -->
+  <h1 class="subtitle" id="team">OUR TEAM</h1>
+  <div>
+    <div class="members">
+      {% for team in teams %}
+      <div class="member-container">
+        <img src="{{team.img.url}}" alt="vishnu" class="member-img" />
+        <div class="member-content">
+          <div class="name">{{team.name}}</div>
+          <div class="icons">
+            <a href="{{team.github_url}}" target="blank">
+              <img
+                src="{% static 'cbe_app/images/github.png' %}"
+                alt="github"
+                class="icon"
+              />
+            </a>
+            <a href="{{team.linkedin_url}}" target="blank">
+              <img
+                src="{% static 'cbe_app/images/linkedin.png' %}"
+                alt="linkedin"
+                class="icon"
+              />
+            </a>
+            <a href="{{team.twitter_url}}" target="blank"
+              ><img
+                src="{% static 'cbe_app/images/twitter.png' %}"
+                alt="twitter"
+                class="icon"
+              />
+            </a>
+          </div>
         </div>
-        <div class="mission-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
-            accusantium voluptates esse eveniet, deserunt delectus magnam est a
-            reiciendis! Optio fugit praesentium alias ipsum impedit blanditiis
-            veritatis eum sed autem, expedita, consectetur nemo? Eligendi cum
-            magni soluta eum numquam. Dolore minus ullam, consequuntur suscipit
-            deserunt, neque nisi repellendus porro perspiciatis omnis libero
-            ipsum tempora odit. Nihil animi voluptate alias nam consequatur
-            tempora consequuntur omnis. Magni fuga molestias beatae cupiditate
-            explicabo amet neque voluptatibus voluptatum est reprehenderit,
-            maxime nihil. Sit voluptatum in nihil asperiores expedita doloribus
-            minus voluptas quod explicabo corporis modi reiciendis nulla,
-            praesentium soluta quidem quisquam id sunt corrupti architecto amet
-            natus blanditiis rerum recusandae necessitatibus! Laudantium
-            expedita veritatis nesciunt autem recusandae? Veritatis, porro
-            corrupti aut, accusamus similique quidem temporibus asperiores
-            praesentium excepturi aliquid fugit corporis assumenda laborum?
-            Cumque, esse doloremque distinctio beatae quas error, aperiam facere
-            unde voluptates ex voluptatibus itaque id fugiat, consequatur nisi
-            explicabo ut a amet molestiae quod dolorum! Molestiae quisquam quas
-            vitae ea quae, aperiam, odio saepe et quibusdam voluptate dolorem
-            fugit dignissimos! Harum rem voluptas voluptatum incidunt
-            exercitationem dolorem velit ea, temporibus non nobis sunt, fugit
-            omnis voluptates dolorum eum error eaque repellat molestias ut.
-            Suscipit commodi reprehenderit laboriosam iusto sint blanditiis
-            aliquid!
-        </div>
+      </div>
+      {% endfor %}
     </div>
 
-    <!-- End Mission  -->
-<!-- Team Start -->
-    <h1 class="subtitle" id="team">OUR TEAM</h1>
-    <div>
-        <div class="members">
-            {% for team in teams %}
-            <div class="member-container">
-                <img
-                    src="{{team.img.url}}"
-                    alt="vishnu"
-                    class="member-img"
-                />
-                <div class="member-content">
-                    <div class="name">{{team.name}}</div>
-                    <div class="icons">
-                       <a href="{{team.github_url}}" target="blank"> <img
-                            src="{% static 'cbe_app/images/github.png' %}"
-                            alt="github"
-                            class="icon"
-                        />
-                    </a>
-                       <a href="{{team.linkedin_url}}" target="blank"> <img
-                            src="{% static 'cbe_app/images/linkedin.png' %}"
-                            alt="linkedin"
-                            class="icon"
-                            
-                        />
-                    </a>
-                       <a href="{{team.twitter_url}}" target="blank"><img
-                            src="{% static 'cbe_app/images/twitter.png' %}"
-                            alt="twitter"
-                            class="icon"
-                        />
-                    </a> 
-                    </div>
-                </div>
-            </div>
-         {% endfor %}
-        </div>
-       
     <!-- End Team -->
 
     <!-- Events start -->
     <h1 class="subtitle">UPCOMING EVENTS</h1>
     <div class="events">
-        {% for event in events %}
-        <div class="event-card">
-            <img
-                src="{{event.image.url}}"
-                alt=""
-                class="event-image"
-            />
-            <div class="date">
-                <div style="text-align: center;"> {{event.date }} </div>
-            </div>
-            <div class="event-content">
-                <h1 class="event-title">{{event.title}}</h1>
-                <p class="event-body">
-                 {{event.description}}
-                </p>
-            </div>
+      {% for event in events %}
+      <div class="event-card">
+        <img src="{{event.image.url}}" alt="" class="event-image" />
+        <div class="date">
+          <div style="text-align: center;">{{event.date }}</div>
         </div>
-        {% endfor %}
+        <div class="event-content">
+          <h1 class="event-title">{{event.title}}</h1>
+          <p class="event-body">
+            {{event.description}}
+          </p>
         </div>
+      </div>
+      {% endfor %}
     </div>
-    <h1 class="subtitle" id="contact">CONTACT US</h1>
+  </div>
+  <h1 class="subtitle" id="contact">CONTACT US</h1>
 
-    <form action="" method="post">
-        <div class="contact">
-            <input type="text" class="top" placeholder="Enter email" />
-            <input type="text" class="top" placeholder="Enter name" />
-            <textarea
-                cols="30"
-                rows="10"
-                class="bottom"
-                placeholder="Enter message"
-            ></textarea>
-            <button class="submit">Submit</button>
-        </div>
-    </form>
+  <div class="contact">
+    <input type="text" class="top" placeholder="Enter email" id="email" />
+    <input type="text" class="top" placeholder="Enter name" id="name" />
+    <textarea
+      cols="30"
+      rows="10"
+      class="bottom"
+      placeholder="Enter message"
+      id="message"
+    ></textarea>
+    <button class="submit" id="submit-btn">Submit</button>
+  </div>
 
-    <!-- End Team -->
+  <!-- End Team -->
 </main>
 <footer>
   <div class="gutter"></div>
-    <div class="fotter-content">
-      <div>Made with love R.Vignesh</div> </div>
-    <div class="footer-icons">
-        <img
-            src="{% static 'cbe_app/images/github.png' %}"
-            alt="github"
-            class="footer-icon"
-        />
-        <img
-            src="{% static 'cbe_app/images/linkedin.png' %}"
-            alt="linkedin"
-            class="footer-icon"
-        />
-        <img
-            src="{% static 'cbe_app/images/twitter.png' %}"
-            alt="twitter"
-            class="footer-icon"
-        />
-    </div>
+  <div class="fotter-content">
+    <div>Made with love R.Vignesh</div>
+  </div>
+  <div class="footer-icons">
+    <img
+      src="{% static 'cbe_app/images/github.png' %}"
+      alt="github"
+      class="footer-icon"
+    />
+    <img
+      src="{% static 'cbe_app/images/linkedin.png' %}"
+      alt="linkedin"
+      class="footer-icon"
+    />
+    <img
+      src="{% static 'cbe_app/images/twitter.png' %}"
+      alt="twitter"
+      class="footer-icon"
+    />
+  </div>
 </footer>
+
+<script defer>
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  const csrftoken = getCookie("csrftoken");
+  const submitBtn = document.querySelector("#submit-btn");
+
+  submitBtn.addEventListener("click", submitContact);
+  function submitContact() {
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const message = document.querySelector("#message");
+
+    const nameVal = name.value;
+    const emailVal = email.value;
+    const messageVal = message.value;
+
+    if (nameVal && emailVal && messageVal) {
+      fetch("contact/", {
+        method: "POST",
+        body: JSON.stringify({
+          name: nameVal,
+          email: emailVal,
+          message: messageVal,
+        }),
+        headers: { "X-CSRFToken": csrftoken },
+        mode: "same-origin",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data["added"]) {
+            alert("Your query has been submitted");
+          }
+          name.value = "";
+          email.value = "";
+          message.value = " ";
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+</script>
 {%endblock %}
