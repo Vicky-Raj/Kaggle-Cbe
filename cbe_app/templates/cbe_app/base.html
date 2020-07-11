@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link rel="stylesheet" href="{% static 'cbe_app/css/styles.css' %}" />
+        <title>Kaggle</title>
+        <script>
+            function show() {
+                const backdrop = document.getElementsByClassName("backdrop")[0];
+                const drawer = document.getElementsByClassName("drawer")[0];
+                backdrop.style.display = "block";
+                if(drawer.classList.contains("come-out")){
+                 drawer.classList.replace("come-out","come-in")
+                }
+                drawer.style.display = "block";
+            }
+            window.addEventListener("DOMContentLoaded", (event) => {
+              document
+                .getElementsByClassName("backdrop")[0]
+                .addEventListener("click", () => {
+                    const backdrop = document.getElementsByClassName("backdrop")[0];
+                    const drawer = document.getElementsByClassName("drawer")[0];
+                    backdrop.style.display = "none";
+                    drawer.classList.replace("come-in","come-out");
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <nav>
+            <div class="title">Kaggle Coimbatore</div>
+            <div class="gutter"></div>
+            <div class="hidden">
+                <a class="link" href="#">Home</a>
+                <a class="link">Our Mission</a>
+                <a class="link">Our Team</a>
+                <a class="link">Contact Us</a>
+            </div>
+            <i class="material-icons visible menu-icon" onclick="show()"
+                >menu</i
+            >
+            <div class="backdrop" style="display: none;"></div>
+            <div class="drawer come-in"></div>
+        </nav>
+        {% block content %} {% endblock %}
+    </body>
+</html>
