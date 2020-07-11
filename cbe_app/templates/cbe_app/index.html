@@ -8,8 +8,8 @@
     <div class="hero-container">
         <div class="hero-text">
             Be part of the <br />
-            world’s biggest offline<br />
-            data science community
+            Coimbatore’s biggest <br />
+            Data Science community
         </div>
         <div class="btn-container">
             <button class="btn">Join us</button>
@@ -55,212 +55,68 @@
     </div>
 
     <!-- End Mission  -->
-
+<!-- Team Start -->
     <h1 class="subtitle" id="team">OUR TEAM</h1>
     <div>
         <div class="members">
+            {% for team in teams %}
             <div class="member-container">
                 <img
-                    src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
+                    src="{{team.img.url}}"
                     alt="vishnu"
                     class="member-img"
                 />
                 <div class="member-content">
-                    <div class="name">Vishnu Varthan</div>
+                    <div class="name">{{team.name}}</div>
                     <div class="icons">
-                        <img
+                       <a href="{{team.github_url}}" target="blank"> <img
                             src="{% static 'cbe_app/images/github.png' %}"
                             alt="github"
                             class="icon"
                         />
-                        <img
+                    </a>
+                       <a href="{{team.linkedin_url}}" target="blank"> <img
                             src="{% static 'cbe_app/images/linkedin.png' %}"
                             alt="linkedin"
                             class="icon"
+                            
                         />
-                        <img
+                    </a>
+                       <a href="{{team.twitter_url}}" target="blank"><img
                             src="{% static 'cbe_app/images/twitter.png' %}"
                             alt="twitter"
                             class="icon"
                         />
+                    </a> 
                     </div>
                 </div>
             </div>
-            <div class="member-container">
-                <img
-                    src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
-                    alt="vishnu"
-                    class="member-img"
-                />
-                <div class="member-content">
-                    <div class="name">Vishnu Varthan</div>
-                    <div class="icons">
-                        <img
-                            src="{% static 'cbe_app/images/github.png' %}"
-                            alt="github"
-                            class="icon"
-                        />
-                        <img
-                            src="{% static 'cbe_app/images/linkedin.png' %}"
-                            alt="linkedin"
-                            class="icon"
-                        />
-                        <img
-                            src="{% static 'cbe_app/images/twitter.png' %}"
-                            alt="twitter"
-                            class="icon"
-                        />
-                    </div>
-                </div>
-            </div>
+         {% endfor %}
         </div>
-        <div class="members">
-            <div class="member-container">
-                <img
-                    src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
-                    alt="vishnu"
-                    class="member-img"
-                />
-                <div class="member-content">
-                    <div class="name">Vishnu Varthan</div>
-                    <div class="icons">
-                        <img
-                            src="{% static 'cbe_app/images/github.png' %}"
-                            alt="github"
-                            class="icon"
-                        />
-                        <img
-                            src="{% static 'cbe_app/images/linkedin.png' %}"
-                            alt="linkedin"
-                            class="icon"
-                        />
-                        <img
-                            src="{% static 'cbe_app/images/twitter.png' %}"
-                            alt="twitter"
-                            class="icon"
-                        />
-                    </div>
-                </div>
-            </div>
+       
+    <!-- End Team -->
 
-            <div class="member-container">
-                <img
-                    src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
-                    alt="vishnu"
-                    class="member-img"
-                />
-                <div class="member-content">
-                    <div class="name">Vishnu Varthan</div>
-                    <div class="icons">
-                        <img
-                            src="{% static 'cbe_app/images/github.png' %}"
-                            alt="github"
-                            class="icon"
-                        />
-                        <img
-                            src="{% static 'cbe_app/images/linkedin.png' %}"
-                            alt="linkedin"
-                            class="icon"
-                        />
-                        <img
-                            src="{% static 'cbe_app/images/twitter.png' %}"
-                            alt="twitter"
-                            class="icon"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Events start -->
     <h1 class="subtitle">UPCOMING EVENTS</h1>
     <div class="events">
+        {% for event in events %}
         <div class="event-card">
             <img
-                src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
+                src="{{event.image.url}}"
                 alt=""
                 class="event-image"
             />
             <div class="date">
-                <div style="text-align: center;">Mar</div>
-                <div style="text-align: center;">28</div>
+                <div style="text-align: center;"> {{event.date }} </div>
             </div>
             <div class="event-content">
-                <h1 class="event-title">First Event</h1>
+                <h1 class="event-title">{{event.title}}</h1>
                 <p class="event-body">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Laudantium magni beatae neque nesciunt ipsam cum, assumenda
-                    quod nobis temporibus libero repellendus enim dolorem cumque
-                    iste minus. Quasi, reprehenderit voluptatibus quae minima
-                    harum aperiam quidem mollitia consequatur optio sequi
-                    eligendi quis?
+                 {{event.description}}
                 </p>
             </div>
         </div>
-        <div class="event-card">
-            <img
-                src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
-                alt=""
-                class="event-image"
-            />
-            <div class="date">
-                <div style="text-align: center;">Mar</div>
-                <div style="text-align: center;">28</div>
-            </div>
-            <div class="event-content">
-                <h1 class="event-title">First Event</h1>
-                <p class="event-body">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Laudantium magni beatae neque nesciunt ipsam cum, assumenda
-                    quod nobis temporibus libero repellendus enim dolorem cumque
-                    iste minus. Quasi, reprehenderit voluptatibus quae minima
-                    harum aperiam quidem mollitia consequatur optio sequi
-                    eligendi quis?
-                </p>
-            </div>
-        </div>
-        <div class="event-card">
-            <img
-                src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
-                alt=""
-                class="event-image"
-            />
-            <div class="date">
-                <div style="text-align: center;">Mar</div>
-                <div style="text-align: center;">28</div>
-            </div>
-            <div class="event-content">
-                <h1 class="event-title">First Event</h1>
-                <p class="event-body">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Laudantium magni beatae neque nesciunt ipsam cum, assumenda
-                    quod nobis temporibus libero repellendus enim dolorem cumque
-                    iste minus. Quasi, reprehenderit voluptatibus quae minima
-                    harum aperiam quidem mollitia consequatur optio sequi
-                    eligendi quis?
-                </p>
-            </div>
-        </div>
-        <div class="event-card">
-            <img
-                src="https://romantic-neumann-d2a8b4.netlify.app/images/team/vishnu.jpeg"
-                alt=""
-                class="event-image"
-            />
-            <div class="date">
-                <div style="text-align: center;">Mar</div>
-                <div style="text-align: center;">28</div>
-            </div>
-            <div class="event-content">
-                <h1 class="event-title">First Event</h1>
-                <p class="event-body">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Laudantium magni beatae neque nesciunt ipsam cum, assumenda
-                    quod nobis temporibus libero repellendus enim dolorem cumque
-                    iste minus. Quasi, reprehenderit voluptatibus quae minima
-                    harum aperiam quidem mollitia consequatur optio sequi
-                    eligendi quis?
-                </p>
-            </div>
+        {% endfor %}
         </div>
     </div>
     <h1 class="subtitle" id="contact">CONTACT US</h1>
