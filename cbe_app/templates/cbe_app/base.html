@@ -19,20 +19,28 @@
                 const backdrop = document.getElementsByClassName("backdrop")[0];
                 const drawer = document.getElementsByClassName("drawer")[0];
                 backdrop.style.display = "block";
-                if(drawer.classList.contains("come-out")){
-                 drawer.classList.replace("come-out","come-in")
+                if (drawer.classList.contains("come-out")) {
+                    drawer.classList.replace("come-out", "come-in");
                 }
                 drawer.style.display = "block";
             }
+
+            function close() {
+                const backdrop = document.getElementsByClassName("backdrop")[0];
+                const drawer = document.getElementsByClassName("drawer")[0];
+                backdrop.style.display = "none";
+                drawer.classList.replace("come-in", "come-out");
+            }
             window.addEventListener("DOMContentLoaded", (event) => {
-              document
-                .getElementsByClassName("backdrop")[0]
-                .addEventListener("click", () => {
-                    const backdrop = document.getElementsByClassName("backdrop")[0];
-                    const drawer = document.getElementsByClassName("drawer")[0];
-                    backdrop.style.display = "none";
-                    drawer.classList.replace("come-in","come-out");
-                });
+                document
+                    .getElementsByClassName("menu-icon")[0]
+                    .addEventListener("click", show);
+                document
+                    .getElementsByClassName("backdrop")[0]
+                    .addEventListener("click", close);
+                document
+                    .getElementsByClassName("close")[0]
+                    .addEventListener("click", close);
             });
         </script>
     </head>
@@ -42,16 +50,24 @@
             <div class="title">Kaggle Coimbatore</div>
             <div class="gutter"></div>
             <div class="hidden">
-                <a class="link" href="#">Home</a>
-                <a class="link">Our Mission</a>
-                <a class="link">Our Team</a>
-                <a class="link">Contact Us</a>
+                <a class="link" href="#home">Home</a>
+                <a class="link" href="#mission">Our Mission</a>
+                <a class="link" href="#team">Our Team</a>
+                <a class="link" href="#contact">Contact Us</a>
             </div>
-            <i class="material-icons visible menu-icon" onclick="show()"
+            <i class="material-icons visible menu-icon"
                 >menu</i
             >
             <div class="backdrop" style="display: none;"></div>
-            <div class="drawer come-in"></div>
+            <div class="drawer come-in">
+                <i class="material-icons close">close</i>
+                <div class="side-links">
+                    <a class="side-link" href="#home">Home</a>
+                    <a class="side-link" href="#mission">Our Mission</a>
+                    <a class="side-link" href="#team">Our Team</a>
+                    <a class="side-link" href="#contact">Contact Us</a>
+                </div>
+            </div>
         </nav>
         {% block content %} {% endblock %}
     </body>

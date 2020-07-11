@@ -322,7 +322,7 @@ nav{
 }
 
 .member-img{
-    border-radius: 10px;
+    border-radius: 7px;
     height: 25rem;
     width: 25rem;
 }
@@ -351,13 +351,17 @@ nav{
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.backdrop:hover{
+    cursor: pointer;
+}
+
 .drawer{
     z-index: 3;
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 40%;
+    width: 50%;
     background-color: #ffffff;
     display: none;
 }
@@ -500,4 +504,32 @@ footer{
     font-size: 1.3rem;
     font-weight: bolder;
     letter-spacing: 2px;
+}
+
+
+.close{
+    display: block;
+    text-align:right;
+    padding: 10px;
+    font-size: 3.5rem;
+    color: #22beff;
+    margin-bottom: 1.5rem;
+}
+
+.close:hover{
+    cursor: pointer;
+}
+
+.side-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.side-link{
+    padding:1rem 1rem;
+    font-size: 1.5rem;
+    color: #22beff;
+    letter-spacing: 0.5;
+    text-decoration: none;
+    border-bottom: 0.3px solid #dddddd;
 }
