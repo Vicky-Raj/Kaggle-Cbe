@@ -60,7 +60,7 @@
 
       {% for team in teams %}
       <div class="member-container">
-        <img src="{% static 'cbe_app/images/vishnu.jpeg' %}" alt="vishnu" class="member-img" />
+        <img src="{{team.image.url}}" alt="vishnu" class="member-img" />
         <div class="member-content">
           <div class="name">{{team.name}}</div>
           <div class="icons">
