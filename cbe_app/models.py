@@ -19,7 +19,7 @@ class Event(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
-    img = models.ImageField()
+    img = models.ImageField(upload_to="media")
     github_url = models.URLField()
     linkedin_url = models.URLField()
     twitter_url = models.URLField()
