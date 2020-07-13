@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'z+o4l3xlsv0m6d6n0t1^*($c^)g$iwlh+$do)uf)psqleucj4l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'kaggle_cbe.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if DEBUG:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -136,9 +136,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-AWS_ACCESS_KEY_ID=os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = "kagglecoimbatore"
-AWS_S3_FILE_OVERWRITE=False
-DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
-AWS_DEFAULT_ACL = None
+if DEBUG:
+    AWS_ACCESS_KEY_ID=os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = "kagglecoimbatore"
+    AWS_S3_FILE_OVERWRITE=False
+    DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
+    AWS_DEFAULT_ACL = None
