@@ -3,7 +3,7 @@
 <!-- Hero Start -->
 <div
   class="hero"
-  style="background-image: url(../static/cbe_app/images/hero.jpeg);"
+  style="background-image: url(../static/cbe_app/images/hero.png);"
 >
   <div class="hero-container">
     <div class="hero-text">
@@ -57,9 +57,8 @@
   <h1 class="subtitle" id="team">OUR TEAM</h1>
   <div>
     <div class="members">
-      {% for team in teams %}
       <div class="member-container">
-        <img src="{{team.img.url}}" alt="vishnu" class="member-img" />
+        <img src="{% static 'cbe_app/images/vishnu.jpeg' %}" alt="vishnu" class="member-img" />
         <div class="member-content">
           <div class="name">{{team.name}}</div>
           <div class="icons">
@@ -87,7 +86,64 @@
           </div>
         </div>
       </div>
-      {% endfor %}
+      <div class="member-container">
+        <img src="{% static 'cbe_app/images/vishnu.jpeg' %}" alt="vishnu" class="member-img" />
+        <div class="member-content">
+          <div class="name">Vishnu Varthan</div>
+          <div class="icons">
+            <a href="{{team.github_url}}" target="blank">
+              <img
+                src="{% static 'cbe_app/images/github.png' %}"
+                alt="github"
+                class="icon"
+              />
+            </a>
+            <a href="{{team.linkedin_url}}" target="blank">
+              <img
+                src="{% static 'cbe_app/images/linkedin.png' %}"
+                alt="linkedin"
+                class="icon"
+              />
+            </a>
+            <a href="{{team.twitter_url}}" target="blank"
+              ><img
+                src="{% static 'cbe_app/images/twitter.png' %}"
+                alt="twitter"
+                class="icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="member-container">
+        <img src="{% static 'cbe_app/images/vishnu.jpeg' %}" alt="vishnu" class="member-img" />
+        <div class="member-content">
+          <div class="name">{{team.name}}</div>
+          <div class="icons">
+            <a href="{{team.github_url}}" target="blank">
+              <img
+                src="{% static 'cbe_app/images/github.png' %}"
+                alt="github"
+                class="icon"
+              />
+            </a>
+            <a href="{{team.linkedin_url}}" target="blank">
+              <img
+                src="{% static 'cbe_app/images/linkedin.png' %}"
+                alt="linkedin"
+                class="icon"
+              />
+            </a>
+            <a href="{{team.twitter_url}}" target="blank"
+              ><img
+                src="{% static 'cbe_app/images/twitter.png' %}"
+                alt="twitter"
+                class="icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- End Team -->
