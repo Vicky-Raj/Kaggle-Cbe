@@ -11,7 +11,7 @@ class HomeView(View):
 
     def get(self, request):
         events = Event.objects.all()
-        teams = Team.objects.all()
+        teams = Team.objects.all().order_by('order')
         return render(request, self.template_name, {"events": events, "teams": teams})
 
 

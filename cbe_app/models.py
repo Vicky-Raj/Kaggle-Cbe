@@ -23,6 +23,7 @@ class Team(models.Model):
     github_url = models.URLField()
     linkedin_url = models.URLField()
     twitter_url = models.URLField()
+    order = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
